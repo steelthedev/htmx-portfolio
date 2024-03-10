@@ -1,9 +1,36 @@
-package layout
+<!Doctype html>
+<html class="no-js" lang="zxx">
 
 
+<!-- Mirrored from bostami-bootstrap.ibthemespro.com/bostami-template/home-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2024 05:35:29 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bostami - Home Page Two</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-templ Navbar(){
-      <div class="bostami-header-area mb-80 z-index-5">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/odometer.min.css">
+    <link rel="stylesheet" href="/css/meanmenu.css">
+    <link rel="stylesheet" href="/css/swipper.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <script src="https://unpkg.com/htmx.org@latest"></script>
+</head>
+
+<body>
+ {{ if not .IsHtmxRequest }}
+    <div class="page-wrapper page-wrapper-2" data-background="/img/bg/page-bg-1.jpg">
+
+        <!-- header-start -->
+        <div class="bostami-header-area mb-30 z-index-5">
             <div class="container">
                 <div class="bostami-header-wrap main-style-2">
                     <div class="row">
@@ -12,7 +39,7 @@ templ Navbar(){
                         <div class="col-lg-2 col-md-6 col-sm-4 col-4 d-flex align-items-center">
                             <div class="bostami-header-logo">
                                 <a class="site-logo" href="https://bostami-bootstrap.ibthemespro.com/index.html">
-                                    <img src="./img/logo/logo-2.png" alt="" />
+                                    <img src="/img/logo/logo-2.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -21,10 +48,10 @@ templ Navbar(){
                         <div class="col-lg-10 col-md-6 col-sm-8 col-8">
                             <div class="header-right-flex">
                                 <div class="bostami-main-menu-wrap ">
-                                    <nav class="bastami-main-menu main_menu_2">
-                                        <ul>
-                                            <li>
-                                                <a href="home-2.html">
+                                    <nav class="bastami-main-menu main_menu_2" >
+                                        <ul hx-target="#main">
+                                            <li class="active">
+                                                <a hx-get="/" hx-push-url="true">
                                                     <span>
 
                                                         <i class="fa-light fa-house"></i>
@@ -32,8 +59,8 @@ templ Navbar(){
                                                     home
                                                 </a>
                                             </li>
-                                            <li class="active">
-                                                <a href="about-2.html">
+                                            <li>
+                                                <a hx-get="/about" hx-push-url="true">
                                                     <span>
                                                         <i class="fa-light fa-address-card"></i>
                                                     </span>
@@ -102,46 +129,30 @@ templ Navbar(){
 
             </div>
         </div>
+        {{ end }}
         <!-- header-end -->
+        <div id="main">
+            {{ embed }}
+        </div>
+       
 
-}
+{{ if not .IsHtmxRequest }}
 
-
-templ Base(){
-    <html class="no-js" lang="zxx" >
-    <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Bostami - Home Page Two </title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.png" />
-
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./css/animate.min.css" />
-    <link rel="stylesheet" href="./css/fontawesome.min.css" />
-    <link rel="stylesheet" href="./css/all.min.css" />
-    <link rel="stylesheet" href="./css/odometer.min.css" />
-    <link rel="stylesheet" href="./css/meanmenu.css" />
-    <link rel="stylesheet" href="./css/swipper.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-</head>
-<body>
-
-    @Navbar()
-
-    { children... }
-
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/swipper-bundle.min.js"></script>
-    <script src="./js/jquery.meanmenu.min.js"></script>
-    <script src="./js/wow.min.js"></script>
-    <script src="./js/odometer.min.js"></script>
-    <script src="./js/appear.min.js"></script>
-    <script src="./js/main.js"></script>
+</div>
+{{ end }}
+<!-- JS here -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/swipper-bundle.min.js"></script>
+<script src="/js/jquery.meanmenu.min.js"></script>
+<script src="/js/wow.min.js"></script>
+<script src="/js/odometer.min.js"></script>
+<script src="/js/appear.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 
+
+<!-- Mirrored from bostami-bootstrap.ibthemespro.com/bostami-template/home-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2024 05:35:54 GMT -->
 </html>
 
-}
+

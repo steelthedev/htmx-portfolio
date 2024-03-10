@@ -1,21 +1,31 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/labstack/echo/v4"
+	"github.com/gofiber/template/html/v2"
 	"github.com/steelthedev/htmx-portfolio/handler"
+	"github.com/steelthedev/htmx-portfolio/middlewares"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-	app := echo.New()
-	app.Static("/", "assets")
 
-	appHandler := handler.AppHandler{}
+	engine := html.New("./static", ".html")
 
-	app.GET("/", appHandler.HandleIndex)
-	app.GET("/about", appHandler.HandleAbout)
+	app := fiber.New(fiber.Config{
+		Views:             engine,
+		ViewsLayout:       "layouts/main",
+		PassLocalsToViews: true,
+	})
 
-	fmt.Println("starting server on port 3000")
-	app.Start(":3000")
+	app.Use(middlewares.CheckHTMXInRequest())
+
+	app.Static("/static", "./assets")
+
+	appHandler := handler.NewAppHander()
+
+	app.Get("/", appHandler.Index)
+	app.Get("/about", appHandler.About)
+
+	app.Listen(":3000")
 }
