@@ -26,6 +26,10 @@ func main() {
 
 	app.Get("/", appHandler.Index)
 	app.Get("/about", appHandler.About)
+	app.Get("/contact", appHandler.Contact)
+	app.Get("/blog", appHandler.Blog)
+	app.Get("/portfolio", appHandler.Portfolio)
+	app.Get("resume", appHandler.Resume)
 
 	app.Listen(":3000")
 }
