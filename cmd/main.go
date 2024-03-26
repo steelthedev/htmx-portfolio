@@ -29,7 +29,7 @@ func main() {
 	app.Get("/contact", appHandler.Contact)
 	app.Get("/blog", appHandler.Blog)
 	app.Get("/portfolio", appHandler.Portfolio)
-	app.Get("resume", appHandler.Resume)
+	app.Get("/resume", appHandler.Resume)
 
 	app.Listen(":3000")
 }
